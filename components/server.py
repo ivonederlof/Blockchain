@@ -1,5 +1,5 @@
 
-from .blockchain import BlockChain
+from .blockchain import Blockchain
 from flask import Flask, jsonify, request
 from uuid import uuid4
  
@@ -14,7 +14,7 @@ app = Flask(__name__)
 node_identifier = str(uuid4()).replace('-', '')
 
 # Instantiate the Blockchain
-blockchain = BlockChain()
+blockchain = Blockchain()
 
 def run(): 
     app.run(host=host, port=port)
