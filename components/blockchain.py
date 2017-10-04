@@ -4,6 +4,7 @@ from time import time
 from uuid import uuid4
 from textwrap import dedent
 from flask import Flask, jsonify, request
+from urllib.parse import urlparse
  
 class BlockChain(object):
 

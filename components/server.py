@@ -2,6 +2,10 @@
 from .blockchain import BlockChain
 from flask import Flask, jsonify, request
 from uuid import uuid4
+ 
+
+host = "192.168.178.13"
+port = 5000
 
 # Instantiate our Node
 app = Flask(__name__)
@@ -13,7 +17,7 @@ node_identifier = str(uuid4()).replace('-', '')
 blockchain = BlockChain()
 
 def run(): 
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host=host, port=port)
     
 @app.route('/chain', methods=['GET'])
 def full_chain():
@@ -41,7 +45,6 @@ def new_transaction():
 
 @app.route('/mine', methods=['GET'])
 def mine():
-    print("started mining ...")
     # We run the proof of work algorithm to get the next proof...
     last_block = blockchain.last_block
     last_proof = last_block['proof']
