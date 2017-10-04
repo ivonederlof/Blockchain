@@ -4,7 +4,7 @@ from flask import Flask, jsonify, request
 from uuid import uuid4
  
 
-host = "192.168.178.13"
+host = "192.168.178.22"
 port = 5000
 
 # Instantiate our Node
